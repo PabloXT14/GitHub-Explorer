@@ -1,0 +1,57 @@
+:root {
+    --color-Background: #121214;
+    --color-Cards: #202024;
+    --color-Light-Gray: #87868B;
+    --color-Purple: #8257e6;
+}
+
+ul {
+    margin: 30px 20px;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 400px);
+    // column-gap: 15px;
+    // row-gap: 15px;
+    gap: 15px;
+
+    li {
+        cursor: pointer;
+        transition: all 0.3s ease;
+         // &: refere-se ao elemento onde o '&' esta contido
+        // & + li {
+        //     margin-top: 15px;
+        // }
+        &:hover {
+            transform: scale(1.03);
+        }
+
+
+        border-radius: 3px;
+        padding: 10px;
+        background-color: var(--color-Cards);
+
+        strong {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        p {
+            font-size: 14px;
+            color: var(--color-Light-Gray);
+            margin-top: 10px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 16px;
+            text-decoration: none;
+            color: var(--color-Purple);
+
+            &:hover {
+                font-weight: bold;
+            }
+        }
+    }
+
+    
+}
