@@ -12,7 +12,6 @@ export function App() {
         <>
             <h1>Listagem de Repositórios</h1>
 
-            <InputUser username="pabloxt14" />
             <RepositorieList />
         </>
 

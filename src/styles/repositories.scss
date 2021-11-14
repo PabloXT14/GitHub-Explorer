@@ -6,44 +6,53 @@
 }
 
 ul {
-    margin: 30px 20px;
+    padding: 30px 60px;
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(3, 400px);
-    // column-gap: 15px;
-    // row-gap: 15px;
-    gap: 15px;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, 350px);
+    gap: 15px;// [column-gap] [row-gap];
+    place-content: center;//[align-content] [justify-content]
 
     li {
-        cursor: pointer;
-        transition: all 0.3s ease;
-         // &: refere-se ao elemento onde o '&' esta contido
-        // & + li {
-        //     margin-top: 15px;
-        // }
-        &:hover {
-            transform: scale(1.03);
-        }
-
+        display: grid;
+        grid-template-rows: auto;
 
         border-radius: 3px;
         padding: 10px;
         background-color: var(--color-Cards);
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+         // &: refere-se ao elemento onde o '&' esta contido
+        &:hover {
+            transform: scale(1.03);
+            background-color: #EEE;
+
+            strong {
+                color: #000;
+            }
+
+        }
 
         strong {
             font-size: 20px;
             font-weight: 500;
+            word-break: break-word;/*faz quebra de palavra*/
         }
 
         p {
             font-size: 14px;
             color: var(--color-Light-Gray);
             margin-top: 10px;
+            word-break: break-word;/*faz quebra de palavra*/
         }
 
         a {
-            display: inline-block;
+            display: block;
+            place-self: end start;//[align-self] [justify-self]
             margin-top: 16px;
+            bottom: 0;
             text-decoration: none;
             color: var(--color-Purple);
 
@@ -54,4 +63,12 @@ ul {
     }
 
     
+}
+
+
+@media only screen and (max-width: 845px) {
+    ul {
+        grid-template-columns: 1fr;
+        padding: 30px 15px;
+    }
 }
