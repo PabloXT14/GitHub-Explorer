@@ -1,22 +1,36 @@
 import { useState } from "react";
+import '../styles/inputuser.scss';
+
 
 interface InputUserProps {
-    username: string;
+    onChangeUsername: Function;
 }
 
 export function InputUser(props: InputUserProps) {
 
-    function SignInUser() {
-        console.log("Change user loged")
+    const [text, setText] = useState('')
+
+    function handleChangeText(event: any) {
+        console.log(text);
+        setText(event.target.value);
     }
+
 
     return (
         <>
-            <input
-                type="text"
-                placeholder="Insert your github username"
-            />
-            <button onClick={SignInUser}>Buscar repositorios</button>
+            <div className="inputField">
+                <input
+                    type="text"
+                    placeholder="Insert your github username"
+                    value={text}
+                    onChange={handleChangeText}
+                />
+                <button onClick={() => {
+                    props.onChangeUsername(text)
+                    setText('')
+                }} >Buscar</button>
+            </div>
+
         </>
 
     );

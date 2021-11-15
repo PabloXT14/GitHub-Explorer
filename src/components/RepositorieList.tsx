@@ -13,31 +13,39 @@ interface Repository {
     }
 }
 
+interface RepositorieListProps {
+    username: string;
+}
 
-export function RepositorieList() {
+
+export function RepositorieList(props: RepositorieListProps) {
     //State do repository
     const [repositories, setRepositories] = useState<Repository[]>([])
-    //State username
-    const [username, setUsername] = useState('')
-
 
 
     //Buscando repositorios na API do Github
     useEffect(() => {
-        fetch(`https://api.github.com/users/pabloxt14/repos`)
+        if (props.username.trim() === '') return (setRepositories([]));
+
+        fetch(`https://api.github.com/users/${props.username}/repos`)
             .then(response => response.json())
             .then(data => {
                 console.log(data)
                 setRepositories(data)
             })
-    }, []);
+            .catch((err) => { console.log(err) });
+    }, [props.username]);
 
 
     return (
         <ul>
-            {repositories.map(repository => {
-                return <RepositorieItem key={repository.name} repository={repository} />
-            })}
+            {
+                (repositories === [])
+                    ? <p>Please insert a valided github acount!</p>
+                    : repositories.map(repository => {
+                        return <RepositorieItem key={repository.name} repository={repository} />
+                    })
+            }
         </ul>
     );
 }

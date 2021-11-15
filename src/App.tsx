@@ -5,14 +5,22 @@ import './styles/global.scss';
 
 export function App() {
     //throw new Error('Ahhhhhhhhhhhhhhhhhhhhhhhhh');
-    const [user, setUser] = useState('');
+
+    const [username, setUsername] = useState('');
+
+    function changeUsername(newUser: string) {
+        setUsername(newUser);
+        //console.log(username);
+    }
 
 
     return (
         <>
             <h1>Listagem de Repositórios</h1>
 
-            <RepositorieList />
+            <InputUser onChangeUsername={changeUsername} />
+            <br />
+            <RepositorieList username={username} />
         </>
 
     );

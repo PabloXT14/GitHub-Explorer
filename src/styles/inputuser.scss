@@ -1,0 +1,44 @@
+.inputField {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // text-align: center;
+
+    input {
+        display: inline-block;
+        height: 40px;
+        width: 300px; 
+        background-color: var(--color-Cards);
+        padding: 0 10px;
+        border: 1px solid var(--color-Light-Gray);
+        border-radius: 3px 0 0 3px;
+        outline: none;
+        font-size: 15px;
+        color: #FFF;
+        transition: all 0.4s ease;
+
+        &:focus {
+            border: 1.5px solid var(--color-Purple);
+        }
+    }
+
+    button {
+        height: 40px;
+        width: 80px;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 500;
+        color: #FFF;
+        background-color: transparent;
+        border: 1px solid var(--color-Light-Gray);
+        border-left: none;
+        border-radius: 0 3px 3px 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: var(--color-Purple);
+            border-color: var(--color-Purple);
+        }
+    }
+}
