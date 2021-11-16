@@ -5,12 +5,14 @@ import '../styles/repositories.scss';
 
 interface Repository {
     name: string;
+    id: number;
     description: string;
     html_url: string;
     owner: {
         login: string;
         avatar_url: string;
     }
+    favorite?: boolean;
 }
 
 interface RepositorieListProps {
@@ -37,15 +39,31 @@ export function RepositorieList(props: RepositorieListProps) {
     }, [props.username]);
 
 
+    // Funcao favoritar repositorio
+    function handleFavorite(id: number) {
+        const newRepositories = repositories.map(repo => {
+            return repo.id === id ? { ...repo, favorite: !repo.favorite } : repo;
+        })
+
+        setRepositories(newRepositories);
+    }
+
+
     return (
-        <ul>
-            {
-                (repositories === [])
-                    ? <p>Please insert a valided github acount!</p>
-                    : repositories.map(repository => {
-                        return <RepositorieItem key={repository.name} repository={repository} />
-                    })
-            }
-        </ul>
+        <>
+            {repositories.length == 0 && <p className="notice"> Please insert a valided github acount! </p>}
+
+            <ul>
+
+                {repositories.map(repository => {
+                    return <RepositorieItem
+                        key={repository.name}
+                        repository={repository}
+                        onHandleFavorite={handleFavorite}
+                    />
+                })
+                }
+            </ul>
+        </>
     );
 }

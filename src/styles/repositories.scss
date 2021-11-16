@@ -5,11 +5,23 @@
     --color-Purple: #8257e6;
 }
 
+.notice {
+    margin: auto;
+    margin-top: 30px;
+    max-width: 400px;
+    text-align: center;
+    background-color: var(--color-Cards);
+    color: var(--color-Light-Gray);
+    border: 1px dashed var(--color-Light-Gray);
+    border-radius: 3px;
+
+    padding: 25px;
+    font-size: 17px;
+    font-weight: 500;
+}
+
 ul {
-    p {
-        color: #FFF;
-        font-size: large;
-    }
+    
     padding: 30px 60px;
     list-style: none;
     display: grid;
@@ -25,7 +37,7 @@ ul {
         border-radius: 3px;
         padding: 10px;
         background-color: var(--color-Cards);
-        cursor: pointer;
+        
         transition: all 0.3s ease;
 
          // &: refere-se ao elemento onde o '&' esta contido
@@ -52,18 +64,56 @@ ul {
             word-break: break-word;/*faz quebra de palavra*/
         }
 
-        a {
-            display: block;
+        .bottomCard {
             place-self: end start;//[align-self] [justify-self]
             margin-top: 16px;
             bottom: 0;
-            text-decoration: none;
-            color: var(--color-Purple);
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
 
-            &:hover {
-                font-weight: bold;
+            a {
+                text-decoration: none;
+                color: var(--color-Purple);
+    
+                &:hover {
+                    font-weight: bold;
+                }
+            }
+
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                background-color: #58585aaf;
+                border: 2px solid #3c3c3d98;
+                border-radius: 50%;
+                padding: 5px;
+
+                cursor: pointer;
+                transition: all 0.3s ease;
+
+                span {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #FFF;
+                }
+
+                span.favorited svg {
+                    
+                }
+            }
+
+            button.favorited {
+                background-color: rgb(212, 132, 132);
+                border: 2px solid rgb(224, 44, 44);
             }
         }
+
+        
     }
 
     
@@ -74,5 +124,11 @@ ul {
     ul {
         grid-template-columns: 1fr;
         padding: 30px 15px;
+    }
+}
+
+@media screen and (max-width: 435px) {
+    .notice {
+        margin: 30px 15px;
     }
 }
