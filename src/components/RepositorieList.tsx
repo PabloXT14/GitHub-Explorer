@@ -23,7 +23,7 @@ interface RepositorieListProps {
 export function RepositorieList(props: RepositorieListProps) {
     //State do repository
     const [repositories, setRepositories] = useState<Repository[]>([])
-
+    const [totalFavorites, setTotalFavorites] = useState(0);
 
     //Buscando repositorios na API do Github
     useEffect(() => {
@@ -49,10 +49,24 @@ export function RepositorieList(props: RepositorieListProps) {
     }
 
 
+    // Checando numero de repositorios favoritados
+    useEffect(() => {
+
+        const filtered = repositories.filter(repo => repo.favorite);
+        setTotalFavorites(filtered.length);
+
+    }, [repositories])
+
+
     return (
         <>
+            {/* Aviso para inserir conta github valida */}
             {repositories.length == 0 && <p className="notice"> Please insert a valided github acount! </p>}
 
+            {/* Contador de repositorios favoritados */}
+            {repositories.length !== 0 && <div className="reposFavorite"><span>{totalFavorites}</span> favorite(s)</div>}
+
+            {/* Lista de repositorios da conta inserida */}
             <ul>
 
                 {repositories.map(repository => {
