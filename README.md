@@ -40,4 +40,4 @@ Esta é uma aplicação ReactJS desenvolvida para a listagem de repositorios do 
 * Obs: a página está responsiva, o conteúdo pode ser visto em aparelhos de diversos tamanhos.
 
 ### 🏍 Deploy
-* Para rodar o deploy da aplicação acesse: https://github.com/PabloXT14/GitHub-Explorer
+* Para rodar o deploy da aplicação acesse: https://github-explorer-eta-ruddy.vercel.app/
