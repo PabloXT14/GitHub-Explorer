@@ -28,7 +28,7 @@ Esta é uma aplicação ReactJS desenvolvida para a listagem de repositorios do 
 
 ## 📋 Clipboard (Pré-requisitos)
 - Ter o [NodeJS](https://nodejs.org/en/) e o [Yarn](https://yarnpkg.com/) ou [NPM](https://www.npmjs.com/) instalados
-* OBS: mais caso queira apenas ver apenas o resultado final execute o <a href="### 🏍 Deploy">Deploy</a> da aplicação
+* OBS: mais caso queira apenas ver apenas o resultado final execute o <a href="#-deploy">Deploy</a> da aplicação
 
 ## ⚙ Settings
 * Para executar o projeto você deve baixar os arquivos ou dar um `git clone` do repositório.
