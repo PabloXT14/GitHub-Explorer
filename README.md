@@ -2,8 +2,8 @@
 Esta é uma aplicação ReactJS desenvolvida para a listagem de repositorios do GitHub de um usuário ou organização, onde a busca de repositorios é feita através da inserção de um `github username` válido. E por fim, projeto também conta com um sistema de favoritação de repositórios.
 
 ## 📷 Demonstration
-<img src="./src/assets/Demonstration-GitHub-Explorer-Search.gif" alt="Imagem de Demostração Search">
-<img src="./src/assets/Demonstration-GitHub-Explorer-Favorite.gif" alt="Imagem de Demostração Favorite">
+<img src="./src/assets/Demonstration01-GitHub-Explorer-Search.gif" alt="Imagem de Demostração Search">
+<img src="./src/assets/Demonstration02-GitHub-Explorer-Favorite.gif" alt="Imagem de Demostração Favorite">
 
 ## 🚀 Technologies
 ✔ HTML
